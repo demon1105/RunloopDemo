@@ -18,6 +18,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                              target:self
+                                            selector:@selector(printMessage:)
+                                            userInfo:nil
+                                             repeats:YES];
+    [NSURLConnection connectionWithRequest:nil
+                                  delegate:nil];
+//    [[NSRunLoop currentRunLoop] addTimer:timer
+//                                 forMode:NSRunLoopCommonModes];
+}
+
+-(void)printMessage:(id)sender
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
 }
 
 - (void)didReceiveMemoryWarning
